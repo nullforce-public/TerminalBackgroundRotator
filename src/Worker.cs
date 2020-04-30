@@ -95,7 +95,7 @@ namespace TerminalBackgroundRotator
 
                     // Replace the background image for the given profile
                     dynamic jobject = JsonConvert.DeserializeObject(json);
-                    var profile = ((IEnumerable<dynamic>)jobject["profiles"]).Where(d => d.guid == _profileGuid).SingleOrDefault();
+                    var profile = ((IEnumerable<dynamic>)jobject.profiles["list"]).Where(d => d.guid == _profileGuid).SingleOrDefault();
 
                     if (profile != null)
                     {
