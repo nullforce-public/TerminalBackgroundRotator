@@ -25,7 +25,7 @@ Press `CTRL+C` when you are ready to exit. Your previous `profiles.json` should
 be restored. If it is not, restore one of the backup copies that the application
 has made.
 
-Currently, the application runs only as a .NET Core 3.1 generic host service.
+Currently, the application runs only as a .NET 9 generic host service.
 In the future, running it as a Windows service may be possible.
 
 ## Config

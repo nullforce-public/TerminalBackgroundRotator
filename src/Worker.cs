@@ -29,6 +29,7 @@ public class Worker : BackgroundService
 
     public override Task StartAsync(CancellationToken cancellationToken)
     {
+        _logger.LogInformation("Worker starting at: {time}", DateTimeOffset.Now);
         _filename = Environment.ExpandEnvironmentVariables(_config.GetValue<string>("Terminal:ProfilePath"));
         _profileGuid = _config.GetValue<string>("Terminal:ProfileGuid");
         _wallpaperDirectory = Environment.ExpandEnvironmentVariables(_config.GetValue<string>("Terminal:WallpaperDirectory"));
@@ -99,6 +100,7 @@ public class Worker : BackgroundService
 
                 if (profile != null)
                 {
+                    _logger.LogInformation("Changing background image to: {ImagePath}", backgroundImage);
                     profile.backgroundImage = backgroundImage;
                 }
 
